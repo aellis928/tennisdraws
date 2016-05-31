@@ -1,0 +1,15 @@
+<h1> </h1>
+Name of Draw: <input type = 'text'>
+Add to Draw: <input type = 'text'>
+<button>Create Draw</button>
+<table>
+	<thead>
+		<th>Players</th>
+		<th>Actions</th>
+	</thead>
+	<tbody ng-repeat = 'i in allPlayers'>
+		<td>{{ i.first_name }}</td>
+		<td><a href="">Add to draw</a></td>
+	</tbody>
+
+</table>

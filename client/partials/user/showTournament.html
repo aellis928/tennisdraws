@@ -1,0 +1,80 @@
+
+<!-- 
+
+
+<h2>made it to the page!</h2>
+<p>{{tournament.name}}</p>
+
+
+
+<div ng-repeat = 'user in users' | filter: > {{user.first_name}} 
+
+
+<button ng-click = 'addUtoT(user)'>Add to tournament</button>
+<button ng-click = 'removeUtoT(user)'>Remove from Tournament</button>
+</div>
+<br>
+<br>
+<br>
+
+<form>
+Name:<input type='text' ng-model=newDraw.name>
+<button ng-click = 'createDraw(newDraw)'>Create Draw</button>
+</form>
+
+<h2>Current Draws in this Tournament</h2>
+<div ng-repeat = 'draw in draws'> {{draw.name}}
+<button ng-click = 'viewDraw(draw)'>View Draw</button>
+</div> -->
+
+
+
+ <h2>Add players to Tournament, {{ tournament.name }}</h2>
+<hr> 
+<table>
+	<thead>
+		<tr>
+			<th>Players</th>
+		</tr>
+	</thead>
+	<tbody ng-repeat = 'user in users'>
+		<td ng-if=" user.inTournament == 'none'">
+			<p>{{ user.first_name }}</p>
+			<button ng-click = 'addUtoT(user)'>Add to tournament</button>
+		</td>
+
+	</tbody>
+
+</table>
+<hr>
+<h3>Players currently in the tournament:</h3>
+
+<table>
+	<thead>
+		<tr>
+			<th>Players</th>
+			<th>Actions</th>
+		</tr>
+
+	</thead>
+	<tbody ng-repeat = 'player in players'>
+		<td>{{player.first_name}}</td>
+		<td><button ng-click = 'removePlayer(player)'>Remove Player from Tournament</button></td>
+	</tbody>
+</table>
+
+
+
+
+<form>
+<hr>
+Name:<input type='text' ng-model=newDraw.name>
+<button ng-click = 'createDraw(newDraw)'>Create Draw</button>
+</form>
+
+<h2>Current Draws in this Tournament</h2>
+<div ng-repeat = 'draw in draws'> 
+	{{draw.name}}
+	<button ng-click = 'viewDraw(draw)'>View Draw</button>
+	<button ng-click = 'removeDraw(draw)'>Remove Draw</button>
+<div>
